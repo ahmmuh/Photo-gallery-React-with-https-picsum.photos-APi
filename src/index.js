@@ -9,20 +9,22 @@ import Loading from "./components/Loading"
 import PhotoDetail from "./components/PhotoDetail"
 import Menu from "./components/Menu"
 import MyWishList from "./components/MyWishList"
+import WishListProvider from "./context/WishListProvider"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: (
       <Suspense fallback={<Loading />}>
         <App />
       </Suspense>
     ),
+
     children: [
       {
-        path: "",
+        index: true,
         element: (
           <Suspense fallback={<Loading />}>
             <Start />
@@ -55,11 +57,22 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+
+      {
+        path: "menu",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Menu />
+          </Suspense>
+        ),
+      },
     ],
   },
 ])
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      <WishListProvider></WishListProvider>
+    </RouterProvider>
   </React.StrictMode>
 )

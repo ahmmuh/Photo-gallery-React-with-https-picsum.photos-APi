@@ -36,18 +36,22 @@ const PhotoList = () => {
   useEffect(() => {}, [])
 
   return (
-    <div className="col-8 mx-auto mt-3">
+    <div className="col-8 mx-auto mt-5">
       {photos.length <= 0 && <Loading />}
 
       {photos.map((photo) => (
         <div className="card border-0 shadow rounded mb-4 p-3" key={photo.id}>
           <div className="row g-0">
             <div className="col-md-4">
-              <img
-                src={photo.download_url}
-                className="card-img-top border-3 rounded-end"
-                alt={photo.download_url}
-              />
+              {photo.download_url ? (
+                <img
+                  src={photo.download_url}
+                  className="card-img-top border-3 rounded-end"
+                  alt={photo.download_url}
+                />
+              ) : (
+                <Loading />
+              )}
             </div>
             <div className="col">
               <div className="card-body m-0 px-2 ">

@@ -6,7 +6,7 @@ const Content = () => {
       <div className="col-lg-5">
         <img
           src="https://picsum.photos/seed/picsum/350/370"
-          class="img-fluid rounded-top"
+          className="img-fluid rounded-top"
           alt=""
         />
       </div>
