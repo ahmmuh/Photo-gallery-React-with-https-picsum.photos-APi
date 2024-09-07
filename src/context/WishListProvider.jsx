@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react"
-import Start from "../components/Start"
-import TempWishListContext from "./TempWishListContext"
-import Menu from "../components/Menu"
+import ListContext from "./ListContext"
 import MyWishList from "../components/MyWishList"
-
-const WishListProvider = () => {
+import Menu from "../components/Menu"
+const WishListProvider = ({ children }) => {
   const [wishList, setWishList] = useState([])
 
   const getWishList = () => {
-    const myList = JSON.parse(localStorage.getItem("wishList"))
-    if (myList) {
-      setWishList(myList)
+    try {
+      const myList = JSON.parse(localStorage.getItem("wishList"))
+      if (myList) {
+        console.log("Hämtad Wish list", myList)
+        setWishList(myList)
+      }
+    } catch (error) {
+      console.error("Fel vid hämtning av önskelista", error)
     }
-    console.log("hämtad Wish list", myList)
   }
 
   useEffect(() => {
     getWishList()
   }, [])
+
+  console.log("Wish list from provider ", wishList)
   return (
-    <TempWishListContext.Provider value={wishList}>
-      <Menu />
-      <MyWishList />
-    </TempWishListContext.Provider>
+    <ListContext.Provider value={wishList}>{children}</ListContext.Provider>
   )
 }
 

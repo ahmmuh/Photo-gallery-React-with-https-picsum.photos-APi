@@ -17,7 +17,7 @@ const PhotoList = () => {
       }
     })
     setPhotos(resizeImages)
-    console.log("resizeImages", resizeImages)
+    // console.log("resizeImages", resizeImages)
   }
   useEffect(() => {
     setTimeout(() => {
@@ -67,10 +67,9 @@ const PhotoList = () => {
                 <div className="pt-2">
                   <Link
                     to={`/photos/${photo.id}`}
-                    className="btn btn-md w-25 text-white"
-                    style={{ backgroundColor: "#c0a266" }}
+                    className="btn btn-md w-25 text-primary"
                   >
-                    View
+                    <i className="fa-solid fa-link"></i> View
                   </Link>
                   <button
                     className="btn btn-md w-25 text-danger ms-4"

@@ -72,7 +72,7 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}>
-      <WishListProvider></WishListProvider>
+      <WishListProvider />
     </RouterProvider>
   </React.StrictMode>
 )

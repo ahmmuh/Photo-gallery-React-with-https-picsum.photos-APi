@@ -1,20 +1,11 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
-import TempWishListContext from "../context/TempWishListContext"
-import Loading from "./Loading"
-
+import ListContext from "../context/ListContext"
 const Menu = () => {
-  //   const wishListData = useContext(TempWishListContext)
-  //   const [displayWishList, setWishList] = useState([])
-
-  //   console.log("wishListData from Menu ", wishListData)
-
-  //   if (!wishListData) {
-  //     return <Loading />
-  //   }
-
-  //   const list = Array.from(wishListData)
-  //   console.log("from menu ", list)
+  const wishListData = useContext(ListContext)
+  useEffect(() => {
+    console.log(wishListData)
+  }, [])
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light ">
       <div className="container">
@@ -50,7 +41,7 @@ const Menu = () => {
             <li className="nav-item ">
               <Link className="nav-link" to={"/mywishList"} aria-current="page">
                 <i className="fa-regular fa-heart text-danger"></i> My Wishlist
-                {/* {list && list.length} */}
+                ({wishListData && wishListData.length})
               </Link>
             </li>
           </ul>
