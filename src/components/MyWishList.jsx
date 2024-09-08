@@ -9,7 +9,7 @@ const MyWishList = () => {
   if (!wishList) {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row mt-5">
           <div className="alert alert-info">
             You don't have any photos in the WishList
           </div>
