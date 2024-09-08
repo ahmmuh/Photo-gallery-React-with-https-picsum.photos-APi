@@ -1,11 +1,8 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import ListContext from "../context/ListContext"
 const Menu = () => {
   const wishListData = useContext(ListContext)
-  useEffect(() => {
-    console.log(wishListData)
-  }, [])
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light ">
       <div className="container">

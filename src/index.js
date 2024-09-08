@@ -10,6 +10,7 @@ import PhotoDetail from "./components/PhotoDetail"
 import Menu from "./components/Menu"
 import MyWishList from "./components/MyWishList"
 import WishListProvider from "./context/WishListProvider"
+import Notfound from "./components/Notfound"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
@@ -63,6 +64,15 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Menu />
+          </Suspense>
+        ),
+      },
+
+      {
+        path: "*",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Notfound />
           </Suspense>
         ),
       },

@@ -17,7 +17,6 @@ const PhotoList = () => {
       }
     })
     setPhotos(resizeImages)
-    // console.log("resizeImages", resizeImages)
   }
   useEffect(() => {
     setTimeout(() => {
@@ -30,14 +29,12 @@ const PhotoList = () => {
     updatedWishList.push(photo)
     setWishList(updatedWishList)
     localStorage.setItem("wishList", JSON.stringify(updatedWishList))
-    console.log("updatedWishList", updatedWishList)
   }
-
-  useEffect(() => {}, [])
 
   return (
     <div className="col-8 mx-auto mt-5">
       {photos.length <= 0 && <Loading />}
+      <h3>Our best photos</h3>
 
       {photos.map((photo) => (
         <div className="card border-0 shadow rounded mb-4 p-3" key={photo.id}>

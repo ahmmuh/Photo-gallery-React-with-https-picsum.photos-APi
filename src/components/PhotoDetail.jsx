@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { BASE_URL } from "../backend/Base_url"
-import Loading from "./Loading"
 
 const PhotoDetail = () => {
   const [photo, setPhoto] = useState({})

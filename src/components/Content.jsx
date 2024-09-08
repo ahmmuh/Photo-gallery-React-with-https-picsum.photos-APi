@@ -2,7 +2,7 @@ import React from "react"
 
 const Content = () => {
   return (
-    <div className="row w-75 mx-auto my-4">
+    <div className="row w-75 mx-auto mt-3 mb-5">
       <div className="col-lg-5">
         <img
           src="https://picsum.photos/seed/picsum/350/370"
@@ -30,12 +30,6 @@ const Content = () => {
         >
           View
         </button>
-      </div>
-
-      <div className="col py-5">
-        <h5 className="lead">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h5>
       </div>
     </div>
   )

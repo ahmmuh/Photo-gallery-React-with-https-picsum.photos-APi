@@ -1,7 +1,10 @@
 export const getWishList = () => {
-  const myList = JSON.parse(localStorage.getItem("wishList"))
-  if (myList) {
-    console.log("hämtad Wish list", myList)
-    return myList
+  try {
+    const myList = JSON.parse(localStorage.getItem("wishList."))
+    if (myList) {
+      return myList
+    }
+  } catch (error) {
+    console.error("Fel vid hämtning av önskelista", error)
   }
 }
