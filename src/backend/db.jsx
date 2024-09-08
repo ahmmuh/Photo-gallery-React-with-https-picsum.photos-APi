@@ -1,7 +1,8 @@
 export const getWishList = () => {
   try {
-    const myList = JSON.parse(localStorage.getItem("wishList."))
+    const myList = JSON.parse(localStorage.getItem("wishList"))
     if (myList) {
+      console.log("MYList ", myList)
       return myList
     }
   } catch (error) {

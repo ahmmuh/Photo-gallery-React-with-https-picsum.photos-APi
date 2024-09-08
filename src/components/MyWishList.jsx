@@ -5,8 +5,9 @@ import Loading from "./Loading"
 
 const MyWishList = () => {
   const wishList = useContext(ListContext)
+  console.log("wishList from myWish list ", wishList)
 
-  if (wishList.length === 0) {
+  if (!wishList) {
     return (
       <div className="container">
         <div className="row">
@@ -17,13 +18,15 @@ const MyWishList = () => {
       </div>
     )
   }
+
+  console.log("wishList myWish list component", wishList)
   return (
     <div className="container">
       <h4 className="lead my-3">
         <i className="fa-solid fa-heart text-danger"></i> My WishList
       </h4>
       <div className="row d-flex">
-        {wishList.map(
+        {wishList?.map(
           (photo) =>
             photo && (
               <div className="col-lg-3" key={photo.id}>

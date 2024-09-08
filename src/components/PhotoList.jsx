@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Loading from "./Loading"
 import { BASE_URL } from "../backend/Base_url"
 import { Link } from "react-router-dom"
+import { getWishList } from "../backend/db"
 
 const PhotoList = () => {
   const [photos, setPhotos] = useState([])
@@ -26,10 +27,18 @@ const PhotoList = () => {
 
   const addToWishList = (photo) => {
     const updatedWishList = [...wishList]
+    if (updatedWishList.includes(photo)) {
+      alert("Du har redan denna item i din lista")
+      return
+    }
     updatedWishList.push(photo)
-    setWishList(updatedWishList)
     localStorage.setItem("wishList", JSON.stringify(updatedWishList))
+    setWishList(updatedWishList)
   }
+
+  useEffect(() => {
+    getWishList()
+  }, [wishList])
 
   return (
     <div className="col-8 mx-auto mt-5">
