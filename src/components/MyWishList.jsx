@@ -5,7 +5,6 @@ import Loading from "./Loading"
 
 const MyWishList = () => {
   const wishList = useContext(ListContext)
-  console.log("wishList from myWish list ", wishList)
 
   if (!wishList) {
     return (
@@ -19,11 +18,11 @@ const MyWishList = () => {
     )
   }
 
-  console.log("wishList myWish list component", wishList)
   return (
     <div className="container">
       <h4 className="lead my-3">
-        <i className="fa-solid fa-heart text-danger"></i> My WishList
+        <i className="fa-solid fa-heart text-danger"></i> My WishList (
+        {wishList.length})
       </h4>
       <div className="row d-flex">
         {wishList?.map(

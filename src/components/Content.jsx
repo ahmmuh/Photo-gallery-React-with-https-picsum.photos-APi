@@ -2,7 +2,7 @@ import React from "react"
 
 const Content = () => {
   return (
-    <div className="row w-75 mx-auto mt-3 mb-5">
+    <div className="row w-75 mx-auto mt-2 mb-5">
       <div className="col-lg-5">
         <img
           src="https://picsum.photos/seed/picsum/350/370"
@@ -10,7 +10,7 @@ const Content = () => {
           alt=""
         />
       </div>
-      <div className="col-lg-7">
+      <div className="col-md-7 mt-3">
         <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
@@ -21,8 +21,7 @@ const Content = () => {
           perspiciatis enim molestiae modi officiis odit numquam et, est,
           recusandae debitis totam nam error odio nemo distinctio culpa
           mollitia. Dolores corporis aliquam deleniti porro, magni labore ex,
-          totam corrupti fugiat inventore numquam cupiditate? Consequuntur
-          magnam ipsa maiores accusamus beatae sunt,
+          totam corrupti fugiat inventore numquam
         </p>
         <button
           className="btn btn-outline-danger"

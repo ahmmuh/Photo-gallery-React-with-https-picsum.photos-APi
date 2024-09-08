@@ -4,11 +4,10 @@ import ListContext from "../context/ListContext"
 const Menu = () => {
   const wishListData = useContext(ListContext)
 
-  console.log("wishListData from Menu ", wishListData)
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light ">
       <div className="container">
-        <Link className="navbar-brand" to={"/"}>
+        <Link className="navbar-brand logo" to={"/"}>
           Photo Gallery <i className="fa-solid fa-film"></i>
         </Link>
         <button
@@ -40,7 +39,7 @@ const Menu = () => {
             <li className="nav-item ">
               <Link className="nav-link" to={"/mywishList"} aria-current="page">
                 <i className="fa-regular fa-heart text-danger"></i> My Wishlist
-                ({wishListData ? wishListData.length : 0})
+                ({wishListData ? wishListData?.length : 0})
               </Link>
             </li>
           </ul>
